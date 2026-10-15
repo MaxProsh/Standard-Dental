@@ -37,6 +37,19 @@
     .question-box p{font-size:16px;line-height:25px;margin:0;overflow-wrap:anywhere}
     @media(max-width:820px){.layout-questions{max-width:648px;padding:24px 24px 32px}}
     @media(max-width:520px){.layout-questions{padding:24px 16px 32px}.question-box{padding:18px 16px}.question-box h2{font-size:19px;line-height:26px}}
+    .seo-review{max-width:1210px;margin:auto;padding:0 40px 48px;color:#202729}
+    .seo-review h2{font-size:26px;line-height:34px;font-weight:700;margin:0 0 12px}
+    .seo-review .seo-intro{max-width:940px;font-size:16px;line-height:25px;color:#4b595d;margin:0 0 24px}
+    .seo-group{border-top:1px solid #cad2d4;padding:24px 0 4px}
+    .seo-group h3{font-size:20px;line-height:28px;margin:0 0 16px;font-weight:700}
+    .seo-items{list-style:none;margin:0;padding:0;display:grid;gap:20px;max-width:980px}
+    .seo-items h4{font-size:17px;line-height:25px;margin:0 0 5px;font-weight:700}
+    .seo-items p{font-size:16px;line-height:25px;margin:0;overflow-wrap:anywhere}
+    .seo-items p+p{margin-top:6px}.seo-items strong{font-weight:700}
+    .seo-decision{color:#a30000}.seo-sources{border-top:1px solid #cad2d4;margin:24px 0 0;padding-top:16px;font-size:13px;line-height:21px;color:#4b595d}
+    .seo-sources a{color:#176770;text-underline-offset:3px}.seo-sources p{margin:0 0 8px}
+    @media(max-width:820px){.seo-review{max-width:648px;padding:0 24px 32px}.seo-review h2{font-size:24px;line-height:32px}}
+    @media(max-width:520px){.seo-review{padding-inline:16px}.seo-review h2{font-size:23px;line-height:31px}.seo-group{padding-top:20px}.seo-items{gap:18px}}
   </style>
 </head>
 <body>
@@ -134,7 +147,7 @@
           </div>
           <div class="summary-column">
             <div class="summary-heading">
-              <h1 class="product-title">Стоматологический микроскоп<span class="model-name">ZUMAX OMS 2050 BLACK<br>+ стул с подлокотниками</span></h1>
+              <h1 class="product-title">Стоматологический микроскоп <span class="model-name">ZUMAX OMS 2050 BLACK <br>+ стул с подлокотниками</span></h1>
             </div>
             <div class="product-config">
               <div class="product-topline"><div id="stock" class="stock"><span class="stock-dot"></span><span id="stockText">В наличии</span></div><div class="mount-wrap"><label class="mount-label" for="mount">Исполнение микроскопа</label><select id="mount" class="mount-selector"><option value="floor" selected>Подкатной</option><option value="ceiling">Потолочный</option><option value="wall">Настенный</option></select></div></div>
@@ -152,6 +165,75 @@
       <div class="question-box">
         <h2 id="questionsTitle">Вопросы по макету</h2>
         <p>Что должно происходить при изменении исполнения микроскопа — какие данные должны меняться: цена, комплектация, фотографии, наличие и условия лизинга?</p>
+      </div>
+    </section>
+    <section class="seo-review" id="seo-requirements" aria-labelledby="seoTitle">
+      <h2 id="seoTitle">Требования к карточке товара по SEO</h2>
+      <p class="seo-intro">Сопоставление с документом «Шаблон карточки товара (4)». SEO-специалист положительно оценивает исходный шаблон и предлагает доработки. Верхнюю часть этого макета можно сохранить; ниже неё нужно предусмотреть содержательные блоки. Проверка карточки OMS 2050 BLACK на основном сайте выполнена 15 октября 2026 года.</p>
+
+      <section class="seo-group" aria-labelledby="seoContentTitle">
+        <h3 id="seoContentTitle">Что добавить или сохранить ниже карточки</h3>
+        <ul class="seo-items">
+          <li>
+            <h4>Подробное описание, характеристики и комплектация</h4>
+            <p><strong>Сейчас:</strong> на основном сайте эти разделы уже есть, в макете показана только верхняя часть карточки.</p>
+            <p><strong>При внедрении:</strong> сохранить существующее подробное описание, таблицу характеристик и комплектацию под верхним блоком. Короткий список преимуществ их не заменяет. Это сохранение действующей карточки, а не отдельная новая доработка из DOCX.</p>
+          </li>
+          <li>
+            <h4>Тематические статьи</h4>
+            <p><strong>В DOCX:</strong> вывод статей по ключевым словам под подробным описанием отмечен как готовый. <strong>Расхождение:</strong> в макете этого блока нет; на проверенной карточке OMS 2050 BLACK он также не обнаружен.</p>
+            <p><strong>Решение:</strong> предусмотреть блок после описания и проверить подбор материалов именно о микроскопах. Статьи про сканеры на иллюстрации в DOCX — пример оформления, их не нужно переносить в эту карточку.</p>
+          </li>
+          <li>
+            <h4>Документы по товару</h4>
+            <p><strong>В DOCX:</strong> дополнительное поле для документа отмечено как готовое. <strong>Расхождение:</strong> в макете блока нет; на проверенной карточке раздел документов не обнаружен.</p>
+            <p><strong>Решение:</strong> предусмотреть ссылки на доступные инструкции, технические паспорта и другие согласованные файлы конкретной модели. Клиент предоставляет документы, разработчик подключает вывод. Пустой блок и файлы для сканеров из примера не добавлять.</p>
+          </li>
+          <li>
+            <h4>Частые вопросы</h4>
+            <p><strong>В DOCX:</strong> FAQ предлагается заполнять отдельно для каждого товара в подробном описании через Elementor. <strong>Расхождение:</strong> в макете и проверенной карточке этот раздел не обнаружен.</p>
+            <p><strong>Решение:</strong> добавить ниже описания раскрывающиеся вопросы с ответами по выбору исполнения, комплектации, установке и обслуживанию. Ответы согласовать по конкретной модели. Раскрытие позволяет сохранить компактный вид страницы; текст должен быть доступен пользователю.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="seo-group" aria-labelledby="seoMetaTitle">
+        <h3 id="seoMetaTitle">Что настраивается в системе управления сайтом</h3>
+        <ul class="seo-items">
+          <li>
+            <h4>Заголовок для поиска — Title</h4>
+            <p><strong>В DOCX:</strong> «Купить + H1». На действующей карточке такое правило уже применяется. При внедрении сохранить его и согласовать итоговое название товара. Отдельный видимый блок Title в дизайне не нужен.</p>
+          </li>
+          <li>
+            <h4>Описание для поиска — Description</h4>
+            <p><strong>В DOCX:</strong> название, категория, бренд, страна и общий перечень предложений. На основном сайте маска уже применяется; внешний вид карточки от неё не зависит.</p>
+            <p><strong>Рекомендация:</strong> сделать описание конкретным и читаемым, без перечисления всех категорий. Доставку, официальный дилерский статус, гарантию, отзывы и сравнение указывать только при наличии соответствующих условий, подтверждений и функций. Это слова в примере метатега, а не автоматически обязательные блоки страницы.</p>
+          </li>
+          <li>
+            <h4>Бренд как переменная</h4>
+            <p><strong>В DOCX:</strong> автоматический вывод бренда текущей маской не поддерживается. Это ограничение реализации, а не запрет указывать производителя.</p>
+            <p><strong>Решение для разработчика:</strong> проверить возможность подключения поля бренда к метатегу или индивидуального заполнения Description. Способ реализации пока не подтверждён; подставлять пустую переменную или неверного производителя нельзя.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="seo-group" aria-labelledby="seoDecisionsTitle">
+        <h3 id="seoDecisionsTitle">Что нужно уточнить перед внедрением</h3>
+        <ul class="seo-items">
+          <li>
+            <h4 class="seo-decision">Объём текста 16 278 и 7 027</h4>
+            <p>В DOCX не указаны единицы, метод подсчёта и выборка сравнения. Эти числа пока нельзя использовать как обязательную норму для каждой карточки. Нужно запросить исходный расчёт у SEO-специалиста. Наполнять FAQ следует полезными ответами, а не повторениями ключевых слов ради объёма.</p>
+          </li>
+          <li>
+            <h4 class="seo-decision">Материалы и подтверждённые условия</h4>
+            <p>Клиенту нужно предоставить документы для OMS 2050 BLACK, согласовать ответы FAQ и подтвердить коммерческие обещания. SEO-специалист выбирает релевантные статьи и проверяет метатеги; разработчик сохраняет нижние блоки и подключает их к шаблону.</p>
+          </li>
+        </ul>
+      </section>
+
+      <div class="seo-sources">
+        <p>Основа сравнения — предоставленный DOCX и <a href="https://standartdental.ru/product/hirurgicheskij-operaczionnyj-mikroskop-zumax-oms-2050-black-stul-s-podlokotnikami/" target="_blank" rel="noopener">действующая карточка OMS 2050 BLACK</a>. Отметка «готово» в документе не подтверждает наличие блока во всех товарах. Это проверка одного шаблона и одной карточки, а не полный SEO-аудит сайта.</p>
+        <p>При оценке учтены <a href="https://yandex.ru/support/webmaster/ru/threat/seo-text" target="_blank" rel="noopener">рекомендации Яндекса о полезном тексте и раскрывающихся блоках</a>, <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener">рекомендации Google о содержании без заданного объёма</a> и <a href="https://developers.google.com/search/docs/appearance/snippet" target="_blank" rel="noopener">описаниях страниц</a>. FAQ нужен для ответов покупателям; отдельный FAQ-сниппет Google не обещается: <a href="https://developers.google.com/search/updates#may-2026" target="_blank" rel="noopener">эта функция отключена с 7 мая 2026 года</a>.</p>
       </div>
     </section>
   </main>
