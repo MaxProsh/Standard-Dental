@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; frame-src 'self'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'">
+    <title>Мобильная карточка товара</title>
+    <style>
+        body { margin: 0; background: #171a1b; color: #fff; font: 16px system-ui, sans-serif; }
+        main { display: grid; justify-items: center; }
+        iframe { display: block; width: min(100%, 390px); height: min(700px, 100vh); height: min(700px, 100dvh); border: 0; background: #000; }
+    </style>
+</head>
+<body>
+    <main></main>
+    <noscript>Для просмотра карточки включите JavaScript.</noscript>
+    <script>
+        const products = new Map([
+            ['elf', 'Aoralscan Elf'],
+            ['zumax', 'Zumax OMS 2050 BLACK'],
+            ['castellini', 'Castellini X-Radius Trio Plus']
+        ]);
+        const requested = new URLSearchParams(window.location.search).get('product');
+        const product = products.has(requested) ? requested : 'elf';
+        const card = `${product}-review.html`;
+
+        if (window.matchMedia('(max-width: 820px)').matches) {
+            window.location.replace(card);
+        } else {
+            const title = `${products.get(product)} — мобильная карточка`;
+            document.title = title;
+            const frame = document.createElement('iframe');
+            frame.title = title;
+            frame.src = card;
+            document.querySelector('main').append(frame);
+        }
+    </script>
+</body>
+</html>
