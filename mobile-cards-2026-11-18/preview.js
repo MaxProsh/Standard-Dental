@@ -150,6 +150,12 @@
             slug: 'castellini-x-radius-trio-plus-fov-16x18-sm-tomograf-s-tsefalostatom',
             image: '4107ae4a9cdc03.jpeg',
             categories: ['rentgenodiagnostika', 'tomografy', 'tomografy-castellini']
+        },
+        {
+            name: '3D томограф Genoray Papaya 3D 16×14',
+            slug: '3d-tomograf-genoray-papaya-3d-16x14',
+            image: '583a00f07a0c2d.webp',
+            categories: ['rentgenodiagnostika', 'tomografy', 'tomografy-genoray-co-ltd-yu-koreya']
         }
     ];
 

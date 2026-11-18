@@ -27,6 +27,7 @@
     <div class="controls">
     <select aria-label="Карточка товара" id="product">
       <option value="elf">Aoralscan Elf</option><option value="zumax">Zumax OMS 2050 BLACK</option><option value="castellini">Castellini X-Radius Trio Plus</option>
+      <option value="papaya">Genoray Papaya 3D 16×14</option>
     </select>
     <select aria-label="Версия карточки" id="version">
       <option value="review">С правками</option><option value="baseline">До правок</option>
@@ -63,7 +64,7 @@
     layout.addEventListener('change', setLayout);
     frame.addEventListener('load', setLayout);
     jump.addEventListener('click', () => {
-      const selector = product.value === 'castellini' ? '.sd-review-features' : '.sdc-advantages .sdc-h';
+      const selector = product.value === 'zumax' ? '.sdc-advantages .sdc-h' : '.sd-review-features';
       const target = frame.contentDocument?.querySelector(selector);
       if (target) frame.contentWindow.scrollBy({ top: target.getBoundingClientRect().top - 78, behavior: 'instant' });
     });

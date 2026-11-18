@@ -19,7 +19,8 @@
         const products = new Map([
             ['elf', 'Aoralscan Elf'],
             ['zumax', 'Zumax OMS 2050 BLACK'],
-            ['castellini', 'Castellini X-Radius Trio Plus']
+            ['castellini', 'Castellini X-Radius Trio Plus'],
+            ['papaya', 'Genoray Papaya 3D 16×14']
         ]);
         const requested = new URLSearchParams(window.location.search).get('product');
         const product = products.has(requested) ? requested : 'elf';

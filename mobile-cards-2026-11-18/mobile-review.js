@@ -22,7 +22,9 @@
         .find((label) => label.textContent.trim() === 'Доставка ТК');
     if (delivery) delivery.textContent = 'Доставка в подарок';
 
-    const shortList = benefits?.querySelector(product === 'zumax' ? ':scope > p' : '.complectright > p');
+    const equipment = benefits?.querySelector('.complectright');
+    const shortList = product === 'zumax' ? benefits?.querySelector(':scope > p') :
+        equipment?.querySelector(':scope > p') ?? equipment;
     const items = shortList?.innerHTML.split(/<br\s*\/?\s*>/i).map((line) => {
         const scratch = document.createElement('template');
         scratch.innerHTML = line;
@@ -32,7 +34,7 @@
     const listBox = document.createElement('div');
     listBox.className = 'sd-review-features';
     if (items?.length) {
-        if (product === 'elf' || product === 'castellini') {
+        if (product === 'elf' || product === 'castellini' || product === 'papaya') {
             const heading = document.createElement('h2');
             heading.className = 'sdc-h';
             heading.textContent = product === 'elf' ? 'Преимущества' : 'Комплектация';
