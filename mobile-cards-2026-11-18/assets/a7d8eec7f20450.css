@@ -1,0 +1,14 @@
+/*
+Theme Name:   Merchant Child
+Template:     merchant
+Description:  Дочерняя тема standartdental.ru. Весь свой код и правки — здесь, родительскую Merchant не трогаем.
+Version:      1.0.0
+Text Domain:  merchant-child
+*/
+
+/* Свои стили темы — сюда (пока пусто). Стили тёмной темы лежат в «Внешний вид → Настроить → Дополнительные стили». */
+/* SD 2026-11-03: color-only repair for three approved product pages.
+   Keep the developer's sd-card files and layout unchanged. */
+body:is(.postid-30586,.postid-30313,.postid-33811) .sdc :is(.woocommerce-Tabs-panel,.my-product-faq-item,.product-summary){color:#000}
+body:is(.postid-30586,.postid-30313,.postid-33811) .sdc .my-product-faq-item :is(.my-product-faq-question,.my-product-faq-answer,.my-product-faq-answer p,.my-product-faq-question span){color:#000}
+body:is(.postid-30586,.postid-30313,.postid-33811) .sdc .product-summary .woocommerce-loop-product__title a{color:#000}

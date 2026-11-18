@@ -1,0 +1,325 @@
+.my-product-faq {
+            width: 100%;
+            margin: 50px auto 30px auto;
+        }
+
+        .my-product-faq-title {
+            margin: 0 0 60px 0;
+            font-size: 26px;
+            line-height: 1.2;
+			text-align: center;
+            color: var(--wplb-color-primary) !important;
+        }
+
+        .my-product-faq-item {
+            background: #fff;
+            border-radius: 30px;
+            padding: 30px;
+            margin-bottom: 15px;
+        }
+
+        .my-product-faq-question {
+            width: 100%;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            text-align: left;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: inherit;
+        }
+
+        .my-product-faq-question:hover,
+        .my-product-faq-question:focus {
+            background: transparent;
+            color: inherit;
+        }
+
+        .my-product-faq-question > span:first-child {
+            padding-right: 25px;
+        }
+
+        .my-product-faq-icon {
+            position: relative;
+            flex: 0 0 24px;
+            width: 24px;
+            height: 24px;
+        }
+
+        .my-product-faq-icon::before,
+        .my-product-faq-icon::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 18px;
+            height: 2px;
+            background: currentColor;
+            transform: translate(-50%, -50%);
+        }
+
+        .my-product-faq-icon::after {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        .my-product-faq-item.is-open .my-product-faq-icon::after {
+            opacity: 0;
+        }
+
+        .my-product-faq-answer {
+            display: none;
+            padding-top: 20px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .my-product-faq-item.is-open .my-product-faq-answer {
+            display: block;
+        }
+
+        .my-product-faq-answer p {
+            margin: 0 0 10px 0;
+        }
+
+        .my-product-faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 767px) {
+
+            .my-product-faq {
+                margin-top: 30px;
+            }
+
+            .my-product-faq-title {
+                font-size: 26px;
+            }
+
+            .my-product-faq-item {
+                border-radius: 22px;
+                padding: 20px;
+            }
+
+            .my-product-faq-question {
+                font-size: 16px;
+            }
+
+            .my-product-faq-answer {
+                font-size: 15px;
+            }
+
+        }
+
+
+.worcraft-category-niche {
+    margin: 50px auto 30px auto;
+    color: #FFFFFF;
+}
+/* Обычная цена (без скидки) в карточках каталога — видна на тёмном фоне */
+.products .price,
+.products .price > .woocommerce-Price-amount {
+    color: #60fef9;
+}
+/* География поставок */
+
+.worcraft-category-geography {
+    width: 100%;
+    margin: 50px auto 30px;
+}
+
+.worcraft-category-geography__header {
+    display: flex;
+    align-items: center;
+	justify-content: center;
+    gap: 12px;
+}
+
+.worcraft-category-geography__title {
+    margin: 0;
+	text-align: center;    
+}
+
+
+.worcraft-category-geography__toggle {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    margin: 20px auto 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.worcraft-category-geography__arrow {
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #60fef9;
+    border-bottom: 2px solid #60fef9;
+    transform: rotate(45deg);
+    transition: transform 0.25s ease;
+}
+
+
+.worcraft-category-geography__subtitle {
+    margin: 8px 0 60px;
+	text-align: center;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.worcraft-category-geography__content {
+    color: #FFFFFF;
+}
+
+.worcraft-category-geography__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px 30px;
+}
+
+.worcraft-category-geography__city--hidden {
+    display: none;
+}
+
+.worcraft-category-geography.is-open
+.worcraft-category-geography__city--hidden {
+    display: block;
+}
+
+.worcraft-category-geography.is-open
+.worcraft-category-geography__arrow {
+    transform: rotate(225deg);
+}
+
+@media (max-width: 767px) {
+
+    .worcraft-category-geography__grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+body.tax-product_cat #page.site {
+    background: black;
+}
+
+body.tax-product_cat #page.site .product-summary {
+    background: black;
+}
+
+body.tax-product_cat #page.site .product-summary .meta-cat:hover {
+    color: #60fef9;
+}
+
+body.tax-product_cat #page.site .product-inner {
+    background: black;
+}
+
+body.tax-product_cat #page.site .product-thumbnail img {
+border-radius: 30px;
+}
+
+ul.products li.product .woocommerce-loop-product__title {    
+    color: #FFFFFF;
+}
+
+body.tax-product_cat .page-header__title {    
+    color: #FFFFFF;
+}
+
+body.tax-product_cat .merchant-posts__loading {
+    background: black;
+} 
+
+body.tax-product_cat .recently-title {
+    color: #60fef9;
+}
+
+body.tax-product_cat h2 {
+    color: #60fef9;   
+    font-weight: 600; 
+    font-size: 28px;  
+}
+
+body.tax-product_cat .worcraft-product-articles__title {
+    color: #60fef9;
+}
+
+.worcraft-product-article__name a:hover {
+    color: black;
+}
+
+.widget .products-filter__option {    
+    color: #FFFFFF;
+}
+
+.widget .products-filter__option:hover {    
+    color: #60fef9;
+}
+.products-filter__option-toggler {    
+    color: #FFFFFF;
+}
+
+/* .products-filter__option-name:hover {
+    color: #60fef9;
+}*/ 
+
+
+
+.products-filter--collapsible .products-filter__option-toggler:before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 5px;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+   
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='5' viewBox='0 0 10 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.50495 4.82011L0.205241 1.04856C-0.0684137 0.808646 -0.0684137 0.419663 0.205241 0.179864C0.478652 -0.0599547 0.922098 -0.0599547 1.19549 0.179864L5.00007 3.5171L8.80452 0.179961C9.07805 -0.0598577 9.52145 -0.0598577 9.79486 0.179961C10.0684 0.41978 10.0684 0.808743 9.79486 1.04866L5.49508 4.8202C5.35831 4.94011 5.17925 5 5.00009 5C4.82085 5 4.64165 4.94 4.50495 4.82011Z' fill='%2360fef9'/%3E%3C/svg%3E");
+}
+
+ul.wp-block-latest-posts li a {
+    color: #FFFFFF;   
+}
+
+ul.wp-block-latest-posts li a:hover {
+    color: #60fef9;   
+}
+
+.merchant-posts__found-inner {    
+    color: #FFFFFF;
+}
+
+.products-filter__filter-name {    
+    color: #FFFFFF;
+}
+
+.widget.products-filter-widget .price_slider_amount,
+.widget.products-filter-widget .price_label,
+.widget.products-filter-widget .price_label span {
+    color: #FFFFFF;
+}
+
+.widget.products-filter-widget .ui-slider-range {
+    background-color: #FFFFFF;
+}
+
+.widget.products-filter-widget .ui-slider-handle {
+    background-color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+}
+
+.widget.products-filter-widget .price_slider_amount button.button {
+    color: #000000;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+}
+

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Мобильные карточки для согласования</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #171a1b; color: #f6f8f8; font: 15px/1.4 system-ui, sans-serif; }
+  header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 20px; border-bottom: 1px solid #353d3f; }
+  header div { min-width: 0; }
+  strong, small { display: block; }
+  small { color: #bcc5c7; }
+  label { flex: 0 0 auto; }
+  select, button { background: #242a2b; border: 1px solid #546165; color: inherit; border-radius: 5px; padding: 7px; font: inherit; }
+  button { cursor: pointer; }
+  .controls { display: flex; flex-wrap: wrap; gap: 6px; }
+  .controls [hidden] { display: none; }
+  body { height: 100dvh; display: flex; flex-direction: column; }
+  main { flex: 1; min-height: 0; display: grid; justify-items: center; padding: 10px 0; }
+  iframe { background: #000; height: min(var(--height, 700px), 100%); width: min(var(--width, 390px), 100%); border: 0; }
+  @media (max-width: 600px) { header {padding: 8px 10px;gap:6px} main {padding: 0} }
+</style>
+<body>
+  <header>
+    <div><strong>Мобильные карточки</strong><small>Превью для согласования</small></div>
+    <div class="controls">
+    <select aria-label="Карточка товара" id="product">
+      <option value="elf">Aoralscan Elf</option><option value="zumax">Zumax OMS 2050 BLACK</option><option value="castellini">Castellini X-Radius Trio Plus</option>
+    </select>
+    <select aria-label="Версия карточки" id="version">
+      <option value="review">С правками</option><option value="baseline">До правок</option>
+    </select>
+    <select aria-label="Оформление списка" id="layout" hidden>
+      <option value="panel">Общая подложка</option><option value="tiles">Отдельные плитки</option>
+    </select>
+    <button type="button" id="jump" hidden>К списку</button>
+    <select aria-label="Ширина предпросмотра" id="width">
+      <option value="320" data-height="568">320 × 568</option><option value="360" data-height="640">360 × 640</option>
+      <option value="375" data-height="600">375 × 600</option><option value="390" data-height="700" selected>390 × 700</option><option value="430" data-height="780">430 × 780</option>
+      <option value="100vw">Вся ширина</option>
+    </select>
+    </div>
+  </header>
+  <main><iframe id="card" title="Предпросмотр мобильной карточки товара" src="elf-review.html"></iframe></main>
+  <script>
+    const frame = document.getElementById('card');
+    const product = document.getElementById('product');
+    const version = document.getElementById('version');
+    const layout = document.getElementById('layout');
+    const jump = document.getElementById('jump');
+    const setLayout = () => {
+      if (frame.contentDocument?.body) frame.contentDocument.body.dataset.reviewLayout = layout.value;
+    };
+    function updateCard() {
+      const elf = product.value === 'elf';
+      version.hidden = !elf;
+      layout.hidden = jump.hidden = elf;
+      frame.src = elf && version.value === 'baseline' ? 'card.html' : `${product.value}-review.html`;
+    }
+    product.addEventListener('change', updateCard);
+    version.addEventListener('change', updateCard);
+    layout.addEventListener('change', setLayout);
+    frame.addEventListener('load', setLayout);
+    jump.addEventListener('click', () => {
+      const selector = product.value === 'castellini' ? '.sd-review-features' : '.sdc-advantages .sdc-h';
+      const target = frame.contentDocument?.querySelector(selector);
+      if (target) frame.contentWindow.scrollBy({ top: target.getBoundingClientRect().top - 78, behavior: 'instant' });
+    });
+    document.getElementById('width').addEventListener('change', (event) => {
+      const width = event.target.value;
+      frame.style.setProperty('--width', width.endsWith('vw') ? width : `${width}px`);
+      const height = event.target.selectedOptions[0].dataset.height;
+      frame.style.setProperty('--height', height ? `${height}px` : '100%');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+/* Shared product preview styles. */
+.sd-review-features[hidden],
+#sd-review-benefits-source[hidden] { display: none !important; }
+
+.sdc.sdc-unified .sdc-buy .product-button-wrapper { padding: 0; }
+
+body .sdc.sdc-unified .sdc-buy :is(.sdc-atc .single_add_to_cart_button, .sdc-btn[data-kind="price"]) {
+    min-height: 56px;
+    min-width: 0;
+    width: 100%;
+    margin: 0;
+    padding: 10px 14px;
+    line-height: 1.25;
+    white-space: normal;
+}
+
+.sdc.sdc-unified .sdc-buy .sdc-link[data-kind="kp"] { margin: 4px auto 0; }
+
+@media (max-width: 820px) {
+    html:has(body.single-product),
+    body.single-product .site-breadcrumb { scrollbar-width: none; }
+    html:has(body.single-product)::-webkit-scrollbar,
+    body.single-product .site-breadcrumb::-webkit-scrollbar { display: none; }
+    body[data-review-product] .sdc-docs {
+        order: 5;
+        border-top: 1px solid var(--sdc-line);
+        padding-top: 18px;
+    }
+
+    .sdc-unified .sdc-grid {
+        gap: 16px;
+    }
+
+    .sdc.sdc-unified .sdc-title {
+        font-size: clamp(20px, 5.9vw, 24px);
+        line-height: 1.25;
+    }
+
+    .sdc-unified .sdc-main {
+        width: min(100%, max(184px, 41svh));
+        margin-inline: auto;
+    }
+
+    .sdc-unified .sdc-gallery { gap: 8px; }
+    .sdc-unified .sdc-thumbs-shell { order: 2; }
+
+    body[data-review-product] .sdc-badge {
+        inset: auto auto 12px 8px;
+        max-width: calc(100% - 62px);
+        padding: 3px 9px;
+        background: #6bf4e8;
+        border-color: #6bf4e8;
+        border-radius: 5px;
+        color: #041512;
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    .sdc-unified .sdc-buy {
+        order: 1;
+        width: 100%;
+        padding: 12px !important;
+        border: 1px solid #2e3938;
+        border-radius: 6px;
+        background: #111716;
+    }
+
+    .sdc-unified .sdc-buy .sdc-price {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 2px 12px;
+        margin: 0 0 10px;
+        line-height: 1.18;
+        font-size: clamp(21px, 6vw, 29px);
+    }
+
+    .sdc-unified .sdc-buy .sdc-price ins { order: -1; }
+    .sdc-unified .sdc-buy .sdc-price .amount { white-space: nowrap; }
+    .sdc-unified .sdc-buy .sdc-price del,
+    .sdc-unified .sdc-buy .sdc-price del .amount { font-size: 13px; }
+
+    body .sdc.sdc-unified .sdc-buy :is(.sdc-atc .single_add_to_cart_button, .sdc-btn[data-kind="price"]) {
+        min-height: 51px;
+        padding-inline: 10px;
+    }
+
+    .sdc.sdc-unified .sdc-buy .sdc-link[data-kind="kp"] { min-height: 44px; }
+    .sdc-unified .sdc-buy .sdc-isp { margin: 0 0 10px; }
+    .sdc.sdc-unified .sdc-buy .sdc-isp-select { min-height: 44px; }
+
+    .sd-review-features {
+        display: flow-root;
+        clear: both;
+        overflow-wrap: anywhere;
+        margin-top: 14px;
+        --feature-bg: #191b1c;
+        --feature-line: #373b3d;
+    }
+
+    body[data-review-product="zumax"] .sd-review-features {
+        --feature-bg: #12201f;
+        --feature-line: #31514d;
+    }
+
+    .sdc .sd-review-features :is(ol, ul) { margin: 0; }
+    .sd-review-features li + li { margin-top: 7px; }
+    body[data-review-layout="panel"] .sd-review-features {
+        background: var(--feature-bg);
+        border: 1px solid var(--feature-line);
+        border-radius: 10px;
+        padding: 13px 15px;
+    }
+
+    body[data-review-layout="tiles"] .sd-review-features :is(ol, ul) {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        padding: 0;
+        list-style: none;
+    }
+
+    body[data-review-layout="tiles"] .sd-review-features li {
+        margin: 0;
+        padding: 11px;
+        border: 1px solid var(--feature-line);
+        border-radius: 8px;
+        background: var(--feature-bg);
+        font-size: 14px;
+        line-height: 1.32;
+    }
+
+    body[data-review-layout="tiles"][data-review-product="castellini"] .sd-review-features li:first-child {
+        grid-column: 1 / -1;
+    }
+}

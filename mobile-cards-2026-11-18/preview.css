@@ -1,0 +1,9 @@
+/* Local behavior only. Put requested layout experiments in mobile-edits.css. */
+.preview-status {margin: .8rem 0 0; font-size: .875rem; color: inherit}
+.related .linked-products-carousel {opacity: 1; overflow: hidden}
+.wplb-modal.sd-preview-panel {display: block; visibility: hidden; pointer-events: none; transition: visibility 0s .5s}
+.wplb-modal.sd-preview-panel.open {visibility: visible; pointer-events: auto; transition: none}
+.sd-preview-panel .search-field {transition: border-color .1s ease-in-out}
+.sd-preview-panel .off-modal-layer {opacity: 0; transition: opacity .35s}
+.sd-preview-panel.open .off-modal-layer {opacity: .5}
+body.modal-opened:has(.sd-preview-panel.open) {overflow: hidden}
