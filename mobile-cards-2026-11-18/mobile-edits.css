@@ -99,7 +99,7 @@ body .sdc.sdc-unified .sdc-buy :is(.sdc-atc .single_add_to_cart_button, .sdc-btn
         --feature-line: #373b3d;
     }
 
-    body[data-review-product="zumax"] .sd-review-features {
+    body:is([data-review-product="elf"], [data-review-product="zumax"]) .sd-review-features {
         --feature-bg: #12201f;
         --feature-line: #31514d;
     }

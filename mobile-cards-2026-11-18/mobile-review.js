@@ -22,8 +22,7 @@
         .find((label) => label.textContent.trim() === 'Доставка ТК');
     if (delivery) delivery.textContent = 'Доставка в подарок';
 
-    const shortList = product === 'zumax' ? benefits?.querySelector(':scope > p') :
-        product === 'castellini' ? benefits?.querySelector('.complectright > p') : null;
+    const shortList = benefits?.querySelector(product === 'zumax' ? ':scope > p' : '.complectright > p');
     const items = shortList?.innerHTML.split(/<br\s*\/?\s*>/i).map((line) => {
         const scratch = document.createElement('template');
         scratch.innerHTML = line;
@@ -33,13 +32,13 @@
     const listBox = document.createElement('div');
     listBox.className = 'sd-review-features';
     if (items?.length) {
-        if (product === 'castellini') {
+        if (product === 'elf' || product === 'castellini') {
             const heading = document.createElement('h2');
             heading.className = 'sdc-h';
-            heading.textContent = 'Комплектация';
+            heading.textContent = product === 'elf' ? 'Преимущества' : 'Комплектация';
             listBox.append(heading);
         }
-        const list = document.createElement(product === 'zumax' ? 'ol' : 'ul');
+        const list = document.createElement(product === 'castellini' ? 'ul' : 'ol');
         for (const text of items) {
             const item = document.createElement('li');
             item.textContent = text;
@@ -68,7 +67,7 @@
             if (compact && advantages) advantages.insertAdjacentElement('afterend', docs);
             else docsPosition.after(docs);
         }
-        if (shortList) shortList.hidden = compact;
+        if (items?.length) shortList.hidden = compact;
         listBox.hidden = !compact;
     }
     mobile.addEventListener('change', setMobileLayout);
