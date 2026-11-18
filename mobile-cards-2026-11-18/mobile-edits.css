@@ -95,16 +95,11 @@ body .sdc.sdc-unified .sdc-buy :is(.sdc-atc .single_add_to_cart_button, .sdc-btn
         clear: both;
         overflow-wrap: anywhere;
         margin-top: 14px;
-        --feature-bg: #191b1c;
-        --feature-line: #373b3d;
-    }
-
-    body:is([data-review-product="elf"], [data-review-product="zumax"]) .sd-review-features {
         --feature-bg: #12201f;
         --feature-line: #31514d;
     }
 
-    .sdc .sd-review-features :is(ol, ul) { margin: 0; }
+    .sdc .sd-review-features ol { margin: 0; }
     .sd-review-features li + li { margin-top: 7px; }
     body[data-review-layout="panel"] .sd-review-features {
         background: var(--feature-bg);
@@ -113,7 +108,7 @@ body .sdc.sdc-unified .sdc-buy :is(.sdc-atc .single_add_to_cart_button, .sdc-btn
         padding: 13px 15px;
     }
 
-    body[data-review-layout="tiles"] .sd-review-features :is(ol, ul) {
+    body[data-review-layout="tiles"] .sd-review-features ol {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 8px;

@@ -38,7 +38,7 @@
             heading.textContent = product === 'elf' ? 'Преимущества' : 'Комплектация';
             listBox.append(heading);
         }
-        const list = document.createElement(product === 'castellini' ? 'ul' : 'ol');
+        const list = document.createElement('ol');
         for (const text of items) {
             const item = document.createElement('li');
             item.textContent = text;
