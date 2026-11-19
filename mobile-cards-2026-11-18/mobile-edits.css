@@ -44,7 +44,7 @@ body .sdc.sdc-unified .sdc-buy :is(.sdc-atc .single_add_to_cart_button, .sdc-btn
     .sdc-unified .sdc-gallery { gap: 8px; }
     .sdc-unified .sdc-thumbs-shell { order: 2; }
 
-    body[data-review-product] .sdc-badge {
+    .sdc.sdc-unified .sdc-badge {
         inset: auto auto 12px 8px;
         max-width: calc(100% - 62px);
         padding: 3px 9px;
@@ -129,4 +129,74 @@ body .sdc.sdc-unified .sdc-buy :is(.sdc-atc .single_add_to_cart_button, .sdc-btn
     body[data-review-layout="tiles"][data-review-product="castellini"] .sd-review-features li:first-child {
         grid-column: 1 / -1;
     }
+}
+
+/* Approved four-card layout. Desktop and mobile share the same product data. */
+.sdc.sdc-unified .sdc-advantages {
+    grid-column: 1 / -1;
+    min-width: 0;
+    margin: 0;
+}
+.sdc-unified .sdc-advantages-text {
+    display: grid;
+    grid-template-columns: minmax(0,1.1472fr) minmax(0,1fr);
+    gap: 24px clamp(32px,6vw,100px);
+    align-items: start;
+}
+.sdc-unified .sdc-advantages-text > .sd-review-features {
+    grid-column: 2;
+    grid-row: 1;
+    padding: clamp(16px,2vw,24px);
+    border: 1px solid #31514d;
+    border-radius: 10px;
+    background: #12201f;
+    margin: 0;
+    min-width: 0;
+}
+.sdc-unified .sd-review-features:only-child { grid-column: 1 / -1; }
+.sdc-unified .sd-review-features ol { margin: 0; padding-left: 1.45em; }
+.sdc-unified .sd-review-features li + li { margin-top: 8px; }
+.sdc-unified .sd-review-features li::marker { color: #86d9d0; }
+.sdc-unified .sd-pilot-specs { grid-column: 1; grid-row: 1; min-width: 0; }
+.sdc-unified .sd-pilot-specs table {
+    float: none; table-layout: fixed; font-size: 16px; line-height: 1.45;
+    background: #141819; margin: 0 !important; border: 0;
+}
+.sdc-unified .sd-pilot-specs table :is(th,td) {
+    font: inherit !important; text-align: left; vertical-align: top;
+    padding: 11px 14px !important; border: 0 !important; border-bottom: 1px solid #384143 !important;
+    overflow-wrap: anywhere; width: auto !important;
+}
+.sdc-unified .sd-pilot-specs table th { width: 48% !important; color: #c1cdcc !important; }
+.sdc-unified .sd-pilot-specs tr:nth-child(even) { background: #1b2021; }
+.sdc-unified .sd-pilot-specs table a { text-decoration: underline; }
+.sdc-unified .sd-review-features .sd-residential {
+    display: flex; align-items: center; gap: 12px; font-weight: 650;
+    background: #1e3834; border-left: 3px solid #6bf4e8; padding: 12px; margin: 0 0 16px;
+}
+.sdc-unified .sd-residential .checkmy { flex: none; width: 28px !important; height: 28px !important; object-fit: contain; }
+@media (min-width:821px) {
+    .sdc-unified .sdc-grid { column-gap: clamp(32px,6vw,100px); row-gap: 32px; align-items: start; }
+    .sdc-unified .sdc-right, .sdc-unified .sdc-commerce { width: 100%; max-width: none; }
+    .sdc-unified .sdc-gallery { display: flex; flex-direction: column; }
+    .sdc-unified .sdc-main { order: 0; width: min(100%,540px); }
+    .sdc-unified .sdc-thumbs-shell { order: 1; width: min(100%,540px); }
+    .sdc-unified .sdc-thumbs { flex-direction: row; overflow-x: auto; overflow-y: hidden; max-height: none; }
+    .sdc-unified .sdc-thumb { width: 72px; height: 72px; min-height: 72px; }
+    .sdc-unified .sdc-caption { width: min(100%,540px); margin: 8px 0 0; }
+    .sdc-unified .sdc-title { font-size: clamp(21px,2vw,28px); line-height: 1.25; min-height: 3.75em; }
+}
+@media (max-width:820px) {
+    .sdc-unified .sdc-advantages-text { grid-template-columns: minmax(0,1fr); gap: 20px; }
+    .sdc-unified .sdc-advantages-text > .sd-review-features,
+    .sdc-unified .sdc-advantages-text > .sd-pilot-specs { grid-column: 1; grid-row: auto; }
+    .sdc.sdc-unified .sdc-title { font-size: clamp(19px,5vw,23px); line-height: 1.23; min-height: 3.69em; }
+    .sdc-unified .sd-pilot-specs table { font-size: 15px; }
+    .sdc-unified .sd-pilot-specs table :is(th,td) { padding: 9px 10px !important; }
+    .sdc-unified .sdc-grid > .sdc-docs { order: 5; }
+}
+/* The footer builder uses viewport width inside the card page's narrower container. */
+body:is([data-pilot-product],[data-review-product]) .site-footer .row-flex > .elementor { max-width: 100%; }
+@media (max-width:360px), (min-width:821px) and (max-width:980px) {
+    .sdc.sdc-unified .sdc-title { min-height: 4.92em; }
 }
