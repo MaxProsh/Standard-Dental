@@ -4,20 +4,55 @@
     if (!root || !product) return;
     root.classList.add('sdc-unified');
     const grid = root.querySelector('.sdc-grid');
+    function lineIcon(className, path, viewBox) {
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('class', className);
+        svg.setAttribute('viewBox', viewBox);
+        svg.setAttribute('aria-hidden', 'true');
+        svg.setAttribute('focusable', 'false');
+        const lines = document.createElementNS(svg.namespaceURI, 'path');
+        lines.setAttribute('d', path);
+        svg.append(lines);
+        return svg;
+    }
+    const stock = grid.querySelector('.sdc-stock');
+    if (stock) {
+        const group = document.createElement('div');
+        group.className = 'sd-pilot-stock-group';
+        const distributor = document.createElement('span');
+        distributor.className = 'sd-distributor';
+        distributor.append(lineIcon('sd-distributor-icon',
+            'M12 2.5 20 6v5.8c0 4.8-3.6 8-8 10-4.4-2-8-5.2-8-10V6Z M8.5 11.8l2.4 2.4 4.6-5', '0 0 24 24'),
+            'Официальные дистрибьюторы');
+        stock.before(group);
+        group.append(stock, distributor);
+    }
     const section = grid.querySelector('.sdc-advantages');
     const content = section?.querySelector('.sdc-advantages-text');
     // The microscope has a detailed table in its description. Keep its values editable there.
     let table = content?.querySelector('table');
     if (!table && content && product === 'zumax') {
         const overview = document.createElement('table');
-        const fields = new Set(['Окуляры', 'Вариообъектив', 'Наклон бинокуляров', 'Световое пятно и фильтры', 'Подвес']);
-        for (const row of root.querySelectorAll('#tab-description table tr')) {
-            const label = row.cells[0]?.textContent.trim();
-            if (!fields.has(label) || !row.cells[1]) continue;
+        const fields = [
+            ['Увеличение', 'Система увеличения'],
+            ['Окуляры', 'Окуляры'],
+            ['Вариообъектив', 'Объектив и рабочее расстояние'],
+            ['Наклон бинокуляров', 'Наклон бинокулярного тубуса'],
+            ['Настройки', 'Фокусировка и настройки оптики'],
+            ['Освещение', 'Освещение'],
+            ['Световое пятно и фильтры', 'Световое пятно и фильтры'],
+            ['Видеосистема', 'Фото- и видеосистема'],
+            ['Подвес', 'Система подвеса'],
+            ['Цвет корпуса', 'Цвет корпуса'],
+        ];
+        const sourceRows = [...root.querySelectorAll('#tab-description table tr')];
+        for (const [sourceLabel, tileLabel] of fields) {
+            const row = sourceRows.find(r => r.cells[0]?.textContent.trim() === sourceLabel);
+            const value = row?.cells[1]?.textContent.trim();
+            if (!value) continue;
             const entry = overview.insertRow();
-            entry.insertCell().textContent = label;
-            entry.insertCell().textContent = row.cells[1].textContent.trim();
-            fields.delete(label);
+            entry.insertCell().textContent = tileLabel;
+            entry.insertCell().textContent = value;
         }
         if (overview.rows.length) {
             content.prepend(overview);
@@ -78,15 +113,8 @@
             const note = content.querySelector('img.checkmy')?.closest('p');
             if (note) {
                 note.classList.add('sd-residential');
-                const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-                svg.setAttribute('class', 'sd-residential-icon');
-                svg.setAttribute('viewBox', '0 0 32 32');
-                svg.setAttribute('aria-hidden', 'true');
-                svg.setAttribute('focusable', 'false');
-                const lines = document.createElementNS(svg.namespaceURI, 'path');
-                lines.setAttribute('d', 'M3.5 14 15 4.5 26.5 14 M6.5 13v14h10 M23.5 13v3 M11 27v-8h5v5 M20 24l3 3 6-7');
-                svg.append(lines);
-                note.querySelector('img').replaceWith(svg);
+                note.querySelector('img').replaceWith(lineIcon('sd-residential-icon',
+                    'M3.5 14 15 4.5 26.5 14 M6.5 13v14h10 M23.5 13v3 M11 27v-8h5v5 M20 24l3 3 6-7', '0 0 32 32'));
                 panel.insertBefore(note, list);
             }
             grid.append(section);

@@ -187,6 +187,15 @@ body .sdc.sdc-unified .sdc-buy :is(.sdc-atc .single_add_to_cart_button, .sdc-btn
     flex: none; width: 30px; height: 30px; fill: none;
     stroke: #79e4d8; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round;
 }
+.sdc-unified .sd-pilot-stock-group { display: grid; gap: 4px; min-width: 0; }
+.sdc-unified .sd-distributor {
+    display: inline-flex; align-items: center; gap: 7px;
+    color: #e8c991; font-size: 14px; line-height: 1.35; font-weight: 500;
+}
+.sdc-unified .sd-distributor-icon {
+    width: 17px; height: 17px; flex: none; fill: none; stroke: currentColor;
+    stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round;
+}
 @media (min-width:821px) {
     .sdc-unified .sdc-grid { column-gap: clamp(32px,6vw,100px); row-gap: 18px; align-items: start; }
     .sdc-unified .sdc-right, .sdc-unified .sdc-commerce { width: 100%; max-width: none; }
